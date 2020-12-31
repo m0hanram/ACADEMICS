@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>q2</title>
+	<style type="text/css">
+		body
+		{
+			padding-top: 80px;
+			padding-left: 160px;
+		}
+		h1
+		{
+			font-family: verdana;
+		}
+		#left
+		{
+			float: left;
+			width: 50%;
+			height: 100%;
+
+		}
+		#right
+		{
+			float: left;
+			width: 50%;
+			height: 100%;
+		}
+		input
+		{
+			height: 30px;
+			width: 250px;
+			border-style: none;
+			border-bottom-style: solid;
+			border-color: grey;
+		}
+		.name
+		{
+			list-style-image: url("point 1.jpg");
+		}
+		.email
+		{
+			list-style-image: url("point 2.jpg");
+		}
+		.password
+		{
+			list-style-image: url("point 3.jpg");
+		}
+		.repeat
+		{
+			list-style-image: url("point 4.jpg");
+		}
+		button
+		{
+			background-color: blue;
+			color: white;
+			border-radius: 15px;
+			border-style: none;
+			padding: 15px;
+		}
+		#box
+		{
+			width: 30px;
+			height: 20px;
+		}
+		#link
+		{
+			position: relative;
+			left: -250px;
+		}
+		img
+		{
+			height: 430px;
+		}
+	</style>
+</head>
+<body>
+	<div id="left">
+		<h1>Sign up</h1>
+		<form>
+			<ul class="name">
+				<li>
+					<input type="text" name="name" placeholder="Your Name"><br><br>
+				</li>
+			</ul>
+			<ul class="email">
+				<li>
+					<input type="email" name="email" placeholder="Your Email"><br><br>
+				</li>
+			</ul>
+			<ul class="password">
+				<li>
+					<input type="password" name="password" placeholder="Password"><br><br>
+				</li>
+			</ul>
+			<ul class="repeat">
+				<li>
+					<input type="password" name="password" placeholder="Repeat your password"><br><br>
+				</li>
+			</ul>
+			<input type="checkbox" name="checkbox" id="box">I agree all statements in <a href="www.terms">Terms of service</a><br><br>
+		</form>
+		<button>
+			Register
+		</button>
+	</div>
+	<div id="right">
+		<img src="2.jpg">
+		<a href="www.page.com" id="link">I am already member</a>
+	</div>
+</body>
+</html>

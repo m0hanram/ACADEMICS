@@ -1,0 +1,25 @@
+# depslib dependency file v1.0
+1579541805 source:d:\sem2\oops\practise\main.cpp
+	<iostream>
+	"head.h"
+	"memberfunc.cpp"
+
+1579541775 d:\sem2\oops\practise\head.h
+	<iostream>
+	"participant.h"
+	"date.h"
+
+1579542091 d:\sem2\oops\practise\participant.h
+	<iostream>
+
+1579540603 d:\sem2\oops\practise\date.h
+	<iostream>
+
+1579542091 source:d:\sem2\oops\practise\memberfunc.cpp
+	<iostream>
+	"head.h"
+
+1579542091 d:\sem2\oops\practise\memberfunc.cpp
+	<iostream>
+	"head.h"
+

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>labtest</title>
+	<style type="text/css">
+		body
+		{
+			background-color: #ff0045;
+			padding-left: 70px;
+			padding-top: 65px;
+
+		}
+		#inside1
+		{
+			float: left;
+			left: 10%;
+			top: 10%;
+		}
+		img
+		{
+			border-top-left-radius: 15px;
+			border-bottom-left-radius: 15px;
+			height: 500px;
+			width: 300px;
+		}
+		#inside2
+		{
+			float: left;
+			background-color: white;
+			padding: 65px;
+			border-top-right-radius: 15px;
+			border-bottom-right-radius: 15px;
+			height: 370px;
+			width: 800px; 
+		}
+		input
+		{
+			border-style: none;
+		}
+		button
+		{
+			border-radius: 5px;
+			padding: 8px; 
+		}
+		h1
+		{
+			font-family: aharoni;
+		}	
+		button
+		{
+			border-style: none;
+		}	
+	</style>
+</head>
+<body>
+	<div id="inside1">
+		<img src="1.jpg">
+	</div>
+	<div id="inside2">
+		<h1>REGISTRATION INFO</h1>
+		<form>
+		<input type="text" name="name" placeholder="Name"><br><br><br>
+		<input type="date" name="date" placeholder="Birthday" onfocus = "(this.type = 'date')" id="date">
+		<input list="gender">
+		<datalist id="gender">
+			<option value="male">
+			<option value="female">
+		</datalist><br><br>
+		<input type="text" name="class" placeholder="Class"><br><br><br>
+		<input type="text" name="reg" placeholder="Registration code"><br><br><br>
+		</form>
+		<button style="background-color: green;color: white">
+			Search
+		</button>
+	</div>
+</body>
+</html>

@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1583674949 source:d:\sem2\oops\operator_overloading_ps\3_meal\main.cpp
+	<iostream>
+	"meal.h"
+
+1583676578 d:\sem2\oops\operator_overloading_ps\3_meal\meal.h
+	<iostream>
+

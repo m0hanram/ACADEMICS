@@ -1,0 +1,17 @@
+->->DELHI CAPITALS<-<-
+OWNER	:	GMR Sports Pvt .Ltd & JSW Sports Pvt Ltd
+HOME GROUND	:	Feroz Shah Kotla Ground
+COACH	:	Ricky Ponting
+CAPTAIN	:	Shreyas Iyer
+RETAINED PLAYERS	:
+1] Shreyas Iyer
+2] Kagiso Rabada
+3] Rishabh Pant
+4] Shikar Dhawan
+5] Chris Morris
+
+BOUGHT PLAYERS:
+
+1 Sam Billings bought for $170000
+
+2 Sam Billings bought for $160000

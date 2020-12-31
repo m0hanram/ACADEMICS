@@ -1,0 +1,15 @@
+->->CHENNAI SUPER KINGS<-<-
+OWNER	:	Chennai Super Kings Cricket ltd.
+HOME GROUND	:	M. A. Chidambaram Stadium
+COACH	:	Stephen Fleming
+CAPTAIN	:M.S.Dhoni
+RETAINED PLAYERS	:
+1] M.S.Dhoni
+2] Ravindra Jadeja
+3] Suresh Raina
+4] Dwayne Bravo
+5] Faf Du Plessis
+
+BOUGHT PLAYERS:
+
+1 Deepak Chahar bought for $150000

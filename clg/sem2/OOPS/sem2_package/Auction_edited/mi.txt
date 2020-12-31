@@ -1,0 +1,14 @@
+->->MUMBAI INDIANS<-<-
+OWNER	:	Indiawin Sports Pvt. Ltd.
+HOME GROUND	:	Wankhede Stadium
+COACH	:	Mahela Jayawardene
+CAPTAIN	:	Rohit Sharma
+RETAINED PLAYERS	:
+1] Rohit Sharma
+2] Jasprit Bumrah
+3] Hardik Pandya
+5] Kieron Pollard
+
+BOUGHT PLAYERS:
+
+1 Sam Billings bought for $180000

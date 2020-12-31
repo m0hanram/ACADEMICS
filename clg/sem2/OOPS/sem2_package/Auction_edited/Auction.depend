@@ -1,0 +1,53 @@
+# depslib dependency file v1.0
+1595578735 source:d:\auction\auction.cpp
+	<iostream>
+	"Auction.h"
+	<cstring>
+
+1595578740 d:\auction\auction.h
+
+1595578364 source:d:\auction\main.cpp
+	<iostream>
+	<conio.h>
+	<cstring>
+	<windows.h>
+	<fstream>
+	"Auction.h"
+
+1595595437 source:c:\sem2\oops\sem2_package\auction\auction.cpp
+	<iostream>
+	"Auction.h"
+	<cstring>
+
+1595594740 c:\sem2\oops\sem2_package\auction\auction.h
+
+1595611145 source:d:\auction_edited\auction.cpp
+	<iostream>
+	"Auction.h"
+	<cstring>
+
+1595610335 d:\auction_edited\auction.h
+
+1595613647 source:d:\auction_edited\main.cpp
+	<iostream>
+	<conio.h>
+	<cstring>
+	<windows.h>
+	<fstream>
+	"Auction.h"
+
+1595611145 source:c:\sem2\oops\sem2_package\auction_edited\auction.cpp
+	<iostream>
+	"Auction.h"
+	<cstring>
+
+1595610335 c:\sem2\oops\sem2_package\auction_edited\auction.h
+
+1595616161 source:c:\sem2\oops\sem2_package\auction_edited\main.cpp
+	<iostream>
+	<conio.h>
+	<cstring>
+	<windows.h>
+	<fstream>
+	"Auction.h"
+

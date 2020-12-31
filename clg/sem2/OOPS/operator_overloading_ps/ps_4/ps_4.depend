@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1583683939 source:d:\sem2\oops\operator_overloading_ps\ps_4\main.cpp
+	<iostream>
+	"phone.h"
+
+1583684065 d:\sem2\oops\operator_overloading_ps\ps_4\phone.h
+	<iostream>
+
+1583683725 source:d:\sem2\oops\operator_overloading_ps\ps_4\member.cpp
+	<iostream>
+	"phone.h"
+

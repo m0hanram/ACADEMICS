@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1583766605 source:d:\sem2\oops\inheritance_ps\inheritance_6\main.cpp
+	<iostream>
+	"head.h"
+
+1583767027 d:\sem2\oops\inheritance_ps\inheritance_6\head.h
+	<iostream>
+	<string.h>
+

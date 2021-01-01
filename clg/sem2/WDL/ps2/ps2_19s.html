@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .main-box{
+            border: 2px solid rgb(190,190,190);
+        }
+        header{
+            margin:0;
+            background-color: rgb(190,190,190);
+            padding: 10px;
+        }
+        header h3{
+            margin: 7px;
+            display: inline;
+        }
+        header select{
+            background-color: rgb(190,190,190);
+            border: none;
+        }
+        .left{
+            float: left;
+        }
+        .left b{
+            float: left;
+        }
+        .left input{
+            float:right;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-box">
+        <header>
+            <h3>Workshop Registration</h3>
+            <select name="options">
+                <option value="More Actions">More Actions</option>
+                <option value="Home">Home</option>
+                <option value="Developer Contact">Developer Contact</option>
+            </select>
+        </header>
+        <form action="#">
+            <div class="left">
+                <u>Register now while seats are available!</u> <br>
+                <b>First Name *</b>
+                <input type="text"> <br>
+                <b>Last Name *</b>
+                <input type="text"> <br>
+                <b>Company/Institution *</b>
+                <input type="text"> <br>
+                <b>Address *</b>
+                <textarea cols="30" rows="10"></textarea> <br>
+                <b>City</b>
+                <input type="text"> <br>
+                <b>State/Province/Region</b>
+                <select name="state">
+                    <option value="Select">-Select-</option>
+                    <option value="Tamil Nadu">Tamil Nadu</option>
+                    <option value="Andra Pradesh">Andra Pradesh</option>
+                    <option value="Kerla">kerla</option>
+                    <option value="Telungana">Telungana</option>
+                </select> <br>
+                <b>Country</b>
+                <select name="Country">
+                    <option value="India">India</option>
+                    <option value="South Korea">South Korea</option>
+                    <option value="USA">USA</option>
+                    <option value="Canada">Canada</option>
+                </select> <br>
+                <b>Email 8</b>
+                <b>Phone Number *</b>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

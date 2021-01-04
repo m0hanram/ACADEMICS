@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ps6_2</title>
+</head>
+<body>
+	<form>
+		ENTER THE CO-ORDINATES:
+		x1:
+		<input type="text" id="x1">
+		y1:
+		<input type="text" id="y1">
+		x2:
+		<input type="text" id="x2">
+		y2:
+		<input type="text" id="y2">
+	</form>
+	<button onclick="fun()">DISTANCE</button>
+	<script type="text/javascript">
+		function fun()
+		{
+			var x1=parseFloat(document.getElementById("x1"));
+			var x2=parseFloat(document.getElementById("x2"));
+			var y1=parseFloat(document.getElementById("y1"));
+			var y2=parseFloat(document.getElementById("y2"));
+			var distance;
+			distance=((x2-x1)**2+(y2-y2)**2)**0.5;
+			document.write("THE DISTANCE B/W THE 2 POINTS ARE:"+distance);
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ps5_19</title>
+</head>
+<body>
+	<script type="text/javascript">
+		
+		var no = Number(prompt("Enter the number of numbers to input :"));
+		var i;
+		var ar = Array(no);
+		var small;
+		for (i = 0; i < no ; i++) 
+		{
+			ar[i]=Number(prompt("Enter the " + (i+1) +" number :"));
+			if(i==0)
+			{
+				small = ar[0];
+			}
+			if(small>ar[i])
+			{
+				small = ar[i];
+			}
+		}
+
+		document.write("The smallest of the integers entered is "+ small );
+
+	</script>
+</body>
+</html>

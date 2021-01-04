@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ps5_17</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var i;
+		var gross=Array(3);
+		var time=Array(3);
+		var pay=Array(3);
+		document.write("<table><tr><th>EMPLOYEE</th><th>TIME</th><th>GROSS</th><th>PAY</th></tr>");
+		for(i=0;i<3;i++)
+		{
+			time[i]=Number(prompt("enter the time of employee"+(i+1)));
+			gross[i]=Number(prompt("enter the gross amount of employee"+(i+1)));
+			pay[i]=(40*gross[i])+(time[i]-40)*0.5*gross[i];
+			document.write("<tr><td>"+(i+1)+"</td><td>"+time[i]+"</td><td>"+gross[i]+"</td><td>"+pay[i]+"</td>");
+		}
+	</script>
+</body>
+</html>

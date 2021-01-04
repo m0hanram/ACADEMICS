@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ps5_20</title>
+</head>
+<body>
+	<script type="text/javascript">
+		digits = Array(5);
+		var number = Number(prompt("enter a 5 digit number"));
+		if(number/10000 > 10 || number/10000 == 0)
+		{
+			alert("not a 5 digit number");
+		}
+		var i;
+
+		digits[0] = number%10;
+		number = Math.floor(number/10);
+		digits[1] = number%10;
+		number = Math.floor(number/10);
+		digits[2] = number%10 ;
+		number = Math.floor(number/10);
+		digits[3] = number%10;
+		number = Math.floor(number/10);
+		digits[4] = number;
+
+		if(digits[0]==digits[4] && digits[1]==digits[3])
+		{
+			document.write("it a pallindrome");
+		}
+		else
+		{
+			document.write("it no pallindrome");
+		}
+	</script>
+</body>
+</html>

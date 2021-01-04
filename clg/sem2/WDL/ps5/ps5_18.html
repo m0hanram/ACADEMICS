@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ps5_18</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var digits = Array(4);
+		var number = Number(prompt("Enter the 4 digit integer"));
+		digits[0] = (number%10 + 7)%10;
+		number = Math.floor(number/10);
+		digits[1] = (number%10 + 7)%10;
+		number = Math.floor(number/10);
+		digits[2] = (number%10 + 7)%10;
+		number = Math.floor(number/10);
+		digits[3] = (number + 7)%10;
+
+		document.write(digits[2]*1000+digits[3]*100+digits[0]*10+digits[1]);
+	</script>
+</body>
+</html>

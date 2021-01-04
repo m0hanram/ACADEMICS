@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ps5_16</title>
+</head>
+<body>
+	<script type="text/javascript">
+			document.write("<table><tr><th>PRODUCT</th><th>QUANTITY</th></tr>")
+			var i,total=0;
+			var x=Array(5);
+			var y=Array(5);
+			for(i=0;i<5;i++)
+			{
+				x[i]=Number(prompt("enter the Quantity of product number"+(i+1)));
+				document.write("<tr><td>"+(i+1)+"</td><td>"+x[i]+"</td></tr>");
+				switch(i)
+				{
+					case 0:y[0]=2.98*x[0];break;
+					case 1:y[1]=4.50*x[1];break;
+					case 2:y[2]=9.98*x[2];break;
+					case 3:y[3]=4.49*x[3];break;
+					case 4:y[4]=6.87*x[4];break;
+				}
+				total=total+y[i];
+			}
+			document.write("</table><p>THE TOTAL IS :"+total+"</p>");
+	</script>
+</body>
+</html>

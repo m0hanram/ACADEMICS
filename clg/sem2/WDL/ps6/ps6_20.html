@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function callback() {
+        form = document.getElementById("myForm");
+        var countries = ["India", "USA", "Canada", "China", "Japan"];
+        for (co of countries)
+            form[4].innerHTML += "<option>" + co + "</option>";
+    }
+
+    function validateForm(event) {
+        var id = event.target.id;
+        var element = document.getElementById(id).value;
+        if (id == "user-id") {
+            if (element.length < 5 || element.length > 12)
+                document.getElementById("error-user").innerHTML = "Invalid Inupt";
+            else
+                document.getElementById("error-user").style.display = "none";
+        }
+        if (id == "pass") {
+            if (element.length < 7 || element.length > 12)
+                document.getElementById("error-pass").innerHTML = "Invalid Inupt";
+            else
+                document.getElementById("error-pass").style.display = "none";
+        }
+        if (id == "name") {
+            if (!isNaN(element))
+                document.getElementById("error-name").innerHTML = "Invalid Inupt";
+            else
+                document.getElementById("error-name").style.display = "none";
+        }
+        if (id == "zip") {
+            if (isNaN(element))
+                document.getElementById("error-zip").innerHTML = "Invalid Inupt";
+            else
+                document.getElementById("error-zip").style.display = "none";
+        }
+        if (id == "email") {
+            regex = /^.+@.+\.(com|co.in)/
+            if (!regex.test(element))
+                document.getElementById("error-email").innerHTML = "Invalid Inupt";
+           // else
+                //document.getElementById("error-email").style.display = "none";
+        }
+    }
+</script>
+
+
+
+<body onload="callback()">
+    <h1>Registration Form</h1>
+    <form action="" id="myForm">
+        <p>User ID</p> <span id="error-user"></span> <br>
+        <input type="text" id="user-id" onblur="validateForm(event)" required>
+
+        <p>Password</p> <span id="error-pass"></span> <br>
+        <input type="Password" id="pass" onblur="validateForm(event)" required>
+
+        <p>Name</p> <span id="error-name"></span> <br>
+        <input type="text" id="name" onblur="validateForm(event)" required>
+
+        <p>Address</p>
+        <input type="text" id="">
+
+        <p>Country</p> <span id="error-coun"></span>
+        <select id="country" required></select>
+
+        <p>Zipcode</p> <span id="error-zip"></span> <br>
+        <input type="text" id="zip" onblur="validateForm(event)"" required>
+
+        <p>Email</p> <span id=" error-email"></span> <br>
+        <input type="text" id="email" onblur="validateForm(event)" required>
+
+        <p>Sex</p> <span id="error-sex"></span>
+        <input type="radio" id="gender" value="Male">Male
+        <input type="radio" id="gender" value="Female">Female
+
+        <p>Language</p> <span id="error-lang"></span>
+        <input type="checkbox" id="lang" value="English">English
+        <input type="checkbox" id="lang" value="Non English">Non English
+
+        <p>About:</p> <span id="error-abt"></span>
+        <textarea name="" id="" cols="30" rows="10"></textarea>
+        <button>Submit</button>
+    </form>
+</body>
+
+</html>

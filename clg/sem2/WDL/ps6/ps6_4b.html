@@ -1,0 +1,51 @@
+Skip to content
+Search or jump to…
+
+Pull requests
+Issues
+Marketplace
+Explore
+ 
+@m0hanram 
+Learn Git and GitHub without any code!
+Using the Hello World guide, you’ll start a branch, write comments, and open a pull request.
+
+
+Sheerabth
+/
+lab_main
+1
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <script>
+        function callback()
+        {
+            do
+            {
+                var num = parseInt(prompt("Enter the number"));
+                if(num < 0)
+                {
+                    alert("Enter a positive number");
+                    continue;
+                }
+                var reverse = 0;
+                while(num > 0)
+                {
+                    reverse *= 10;
+                    reverse += parseInt(num % 10);
+                    num = parseInt(num / 10);
+                }
+                alert("The reverse of the number is " + reverse);
+            }while(confirm("Do you want to continue?"));
+        }
+    </script>
+</head>
+<body onload="callback()">
+</body>
+</html>

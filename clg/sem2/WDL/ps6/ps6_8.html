@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ps6_8</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function fun(word,letter)
+		{
+			var i,c=0;
+			for(i=0;i<word.length;i++)
+			{
+				if(word[i]==letter)
+					c++;
+			}
+			alert("The total number of occurance is :"+c);
+		}
+		var word,letter;
+		word=prompt("Enter the word to be searched ");
+		letter=prompt("Enter the letter to be searched ");
+		fun(word,letter);
+	</script>
+</body>
+</html>

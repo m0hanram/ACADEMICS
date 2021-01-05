@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>skyzodiac-weather-forecast.com</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="style1.css">
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+ 	<script type="text/javascript" src="script1.js"></script>
+</head>
+<body>
+	<section id="first_page">
+		
+		<div class="center_box"></div>
+
+		<img src="skyzodiac.jpg" style="width: 100%;height: 100vh">
+		<div class="main">
+			<ul>
+				<li><a href="#first_page" class="active">HOME</a></li>
+				<li><a href="#second_page">SEARCH</a></li>
+				<li><a href="#third_page">WEATHER</a></li>
+				<li><a href="#sixth_page">ABOUT US</a></li>
+				<li class="logo"><img src="darkskylogo.jpg" style="height: 30px;width: 30px"></li>
+			</ul>
+		</div>
+		
+		<div class="second">
+			<pre>
+				24/7 WEATHER UPDATES
+				ACCURATE AND PRECISE
+				WEATHER PREDICTIONS  
+			</pre>
+		</div>
+		<div class="third">
+			<pre>
+				LIVE UPDATES
+				ACROSS THE GLOBE
+				+5 DAYS FORECAST
+			</pre>
+		</div>
+		<div class="bottom_logo">
+			<img src="darkskylogo.jpg" style="height: 70px;width: 70px">
+		</div>
+			<div class="wording">
+			<h1>WEATHER&nbsp&nbsp&nbsp&nbspUPDATES</h1>
+		</div>
+		<button class="down_arrow" onclick="window.location.href = '#second_page'"><img style="height: 60px;width: 65px;" src="arrow4.png"></button>
+	</section>
+	<section id="second_page">
+		<div class="graphic_heading">
+			<img src="wording.png" height="550px" width="800px">
+		</div>
+		<div class="box">
+			<h2>SEARCH</h2><br>
+			<form>
+				<div class="location" >
+					<input type="text" name="" required="" id="location_in" onkeyup="autofill1() ; mainfunction()">
+					<label>Location</label>
+				</div>
+				<div class="location" style="top: 50;left: 0px;float: left;width: 45%;">
+					<input type="text" name="" required="" id="latitude" >
+					<label>Latitude</label>
+				</div>
+				<div class="location" style="top: 50;left: 0px;float: right;width: 45%;">
+					<input type="text" name="" required="" id="longitude" onkeyup="autofill2() ; mainfunction() ">
+					<label>Longitude</label><br><br>
+				</div>
+				<input type="submit" name="" value="Proceed" onmousedown="window.location.href = '#third_page'" style="height: 40px;letter-spacing: 1px;">
+				
+			</form>
+		</div>
+		<button class="back_arrow" onclick="window.location.href = '#first_page'"><img style="height: 30px;width: 50px;" src="arrow5.png"></button>
+	</section>
+	<section id="third_page">
+		<img id="changebackground" src="" style="width: 100%;height: 100vh">
+		<div class="full_box"></div>
+		<div class="temperature">
+			<p id="temp"></p>
+			<p class="degree">&nbsp&nbsp°C</p>
+		</div>
+		<p id="weather"></p>
+		<button class="down_arrow" onclick="window.location.href = '#fourth_page'"><img style="height: 60px;width: 65px;" src="arrow4.png"></button>
+		<button class="back_arrow" onclick="window.location.href = '#second_page'"><img style="height: 30px;width: 50px;" src="arrow5.png"></button>
+	</section>
+	<section id="fourth_page">
+			<img id="changebackground2" src="" style="width: 100%;height: 100vh">
+			<div class="full_box"></div>
+			<p id="temp_max"></p>
+			<p style="font-size: 15px;color: white;float: left;left: 74%;top: 340%;	margin-left: 0;margin-top: 0;position: absolute;">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp°C</p>
+			<p style="font-size: 15px;color: powderblue;left: 70%;top: 345%;margin-left: 0;margin-top: 0;position: absolute;">MAXIMUM TEMPERATURE</p>
+
+			<p id="temp_min"></p>
+			<p style="font-size: 15px;color: white;float: left;left: 14%;top: 340%;margin-left: 0;margin-top: 0;position: absolute;">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp°C</p>
+			<p style="font-size: 15px;color: powderblue;left: 10%;top: 345%;margin-left: 0;margin-top: 0;position: absolute;">MINIMUM TEMPERATURE</p>	
+
+			<p id="pressure"></p>
+			<p style="font-size: 15px;color: white;float: left;left: 17%;top: 360%;margin-left: 0;margin-top: 0;position: absolute;">&nbsphPa</p>
+			<p style="font-size: 15px;color: powderblue;left: 10%;top: 365%;margin-left: 0;margin-top: 0;position: absolute;">PRESSURE</p>
+
+			<p id="humidity"></p>
+			<p style="font-size: 15px;color: white;float: left;left: 74%;top: 360%;margin-left: 0;margin-top: 0;position: absolute;">&nbsp%</p>
+			<p style="font-size: 15px;color: powderblue;left: 70%;top: 365%;margin-left: 0;margin-top: 0;position: absolute;">HUMIDITY</p>
+		
+			<p id="visiblity"></p>
+			<p style="font-size: 15px;color: white;float: left;left: 16%;top: 380%;margin-left: 0;margin-top: 0;position: absolute;">&nbspkm</p>
+			<p style="font-size: 15px;color: powderblue;left: 10%;top: 385%;margin-left: 0;margin-top: 0;position: absolute;">VISIBLITY</p>
+		
+			<p id="wind_speed"></p>
+			<p style="font-size: 15px;color: white;float: left;left: 76%;top: 380%;margin-left: 0;margin-top: 0;position: absolute;">&nbspkm/h</p>
+			<p style="font-size: 15px;color: powderblue;left: 70%;top: 385%;margin-left: 0;margin-top: 0;position: absolute;">WIND SPEED</p>
+		
+		<p id="description"></p>
+		<img id="icon">
+
+		<button onclick="forecast() ; window.location.href = '#fifth_page';" class="forecast_button">5 DAY FORECAST</button>
+		<button class="back_arrow" onclick="window.location.href = '#third_page'"><img style="height: 30px;width: 50px;" src="arrow5.png"></button>
+	</section>
+	<section id="fifth_page">
+		
+
+		<div class="heading_" style="top: 2670px;left: 70px;">
+			<h1>5 DAY FORECAST</h1>	
+		</div>
+
+		<div class="day1">
+		
+			<h2 id="date1" style="position: absolute;color: violet;margin-left: 30px;margin-top: 0;letter-spacing: 1px"></h2><br><br>
+
+			<p id="temp_1" style="margin-left: 60px;color: white;font-size: 40px;float: left;"></p><br>
+			<p style="position: absolute;color: white;margin-left: 0;margin-top: 0;left: 110px">&nbsp°C</p><br><br>
+
+			<p id="weather_1" style="color: violet;font-size: 30px"></p>
+			
+			<p style="color: powderblue;position: absolute;margin-left: 0;margin-top: 0">MAXIMUM TEMPERATURE</p><br><br>
+			<p id="temp_max_1" style="color: violet;float: left"></p>
+			<p style="position: absolute;color: white;margin-left: 0;margin-top: 0;left: 50px">&nbsp°C</p><br><br>
+			
+			<p style="position: absolute;color: powderblue;margin-left: 0;margin-top: 0">MINIMUM TEMPERATURE</p><br><br>
+			<p id="temp_min_1" style="color: violet;float: left"></p>
+			<p style="position: absolute;color: white;margin-left: 0;margin-top: 0;left: 50px">&nbsp°C</p><br><br>
+			
+			<p style="position: absolute;color: powderblue;margin-left: 0;margin-top: 0">PRESSURE</p><br>
+			<p id="pressure_1" style="color: violet;float: left"></p>
+			<p style="position: absolute;color: white;margin-left: 0;margin-top: 0;left: 50px">&nbsphPa</p><br><br>
+
+			<p style="position: absolute;color: powderblue">HUMIDITY</p><br>
+			<p id="humidity_1" style="color: violet;float: left"></p>
+			<p style="position: absolute;color: white;left: 50px;">&nbsp%</p><br><br>
+
+			<p style="position: absolute;color: powderblue">WIND SPEED</p><br><br>
+			<p id="wind_speed_1" style="color: violet;float: left"></p>
+			<p style="position: absolute;color: white;left: 50px">&nbspkm/h</p><br><br>
+
+		</div>
+		
+		<div class="day2">
+		
+			<h2 id="date2" style="position: absolute;letter-spacing: 1px;color: violet;margin-left: 30px;margin-top: 0"></h2><br><br>
+
+			<p id="temp_2" style="margin-left: 60px;color: white;font-size: 40px;float: left;"></p><br>
+			<p style="position: absolute;color: white;margin-left: 0;margin-top: 0;left: 110px">&nbsp°C</p><br><br>
+
+			<p id="weather_2" style="color: violet;font-size: 30px"></p><br><br>
+
+			<p style="color: powderblue;position: absolute;margin-left: 0;margin-top: 0">MAXIMUM TEMPERATURE</p><br><br>
+			<p id="temp_max_2" style="color: violet;float: left"></p>
+			<p style="position: absolute;color: white;margin-left: 0;margin-top: 0;left: 50px">&nbsp°C</p><br><br>
+			
+			<p style="position: absolute;color: powderblue;margin-left: 0;margin-top: 0">MINIMUM TEMPERATURE</p><br><br>
+			<p id="temp_min_2" style="color: violet;float: left"></p>
+			<p style="position: absolute;color: white;margin-left: 0;margin-top: 0;left: 50px">&nbsp°C</p><br><br>
+			
+			<p style="position: absolute;color: powderblue;margin-left: 0;margin-top: 0">PRESSURE</p><br>
+			<p id="pressure_2" style="color: violet;float: left"></p>
+			<p style="position: absolute;color: white;margin-left: 0;margin-top: 0;left: 50px">&nbsphPa</p><br><br>
+
+			<p style="position: absolute;color: powderblue">HUMIDITY</p><br>
+			<p id="humidity_2" style="color: violet;float: left"></p>
+			<p style="position: absolute;color: white;left: 50px;">&nbsp%</p><br><br>
+
+			<p style="position: absolute;color: powderblue">WIND SPEED</p><br><br>
+			<p id="wind_speed_2" style="color: violet;float: left"></p>
+			<p style="position: absolute;color: white;left: 50px">&nbspkm/h</p><br><br>
+
+		</div>
+
+		<div class="day3">
+		
+			<h2 id="date3" style="position: absolute;color: violet;margin-left: 30px;letter-spacing: 1px;margin-top: 0"></h2><br><br>
+
+			<p id="temp_3" style="margin-left: 60px;color: white;font-size: 40px;float: left;"></p><br>
+			<p style="position: absolute;color: white;margin-left: 0;margin-top: 0;left: 110px">&nbsp°C</p><br><br>
+
+			<p id="weather_3" style="color: violet;font-size: 30px"></p><br><br>
+
+			<p style="color: powderblue;position: absolute;margin-left: 0;margin-top: 0">MAXIMUM TEMPERATURE</p><br><br>
+			<p id="temp_max_3" style="color: violet;float: left"></p>
+			<p style="position: absolute;color: white;margin-left: 0;margin-top: 0;left: 50px">&nbsp°C</p><br><br>
+			
+			<p style="position: absolute;color: powderblue;margin-left: 0;margin-top: 0">MINIMUM TEMPERATURE</p><br><br>
+			<p id="temp_min_3" style="color: violet;float: left"></p>
+			<p style="position: absolute;color: white;margin-left: 0;margin-top: 0;left: 50px">&nbsp°C</p><br><br>
+			
+			<p style="position: absolute;color: powderblue;margin-left: 0;margin-top: 0">PRESSURE</p><br>
+			<p id="pressure_3" style="color: violet;float: left"></p>
+			<p style="position: absolute;color: white;margin-left: 0;margin-top: 0;left: 50px">&nbsphPa</p><br><br>
+
+			<p style="position: absolute;color: powderblue">HUMIDITY</p><br>
+			<p id="humidity_3" style="color: violet;float: left"></p>
+			<p style="position: absolute;color: white;left: 50px;">&nbsp%</p><br><br>
+
+			<p style="position: absolute;color: powderblue">WIND SPEED</p><br><br>
+			<p id="wind_speed_3" style="color: violet;float: left"></p>
+			<p style="position: absolute;color: white;left: 50px">&nbspkm/h</p><br><br>
+
+		</div>
+
+		<div class="day4">
+		
+			<h2 id="date4" style="position: absolute;color: violet;margin-left: 30px;margin-top: 0;letter-spacing: 1px"></h2><br><br>
+
+			<p id="temp_4" style="margin-left: 60px;color: white;font-size: 40px;float: left;"></p><br>
+			<p style="position: absolute;color: white;margin-left: 0;margin-top: 0;left: 110px">&nbsp°C</p><br><br>
+
+			<p id="weather_4" style="color: violet;font-size: 30px"></p><br><br>
+
+			<p style="color: powderblue;position: absolute;margin-left: 0;margin-top: 0">MAXIMUM TEMPERATURE</p><br><br>
+			<p id="temp_max_4" style="color: violet;float: left"></p>
+			<p style="position: absolute;color: white;margin-left: 0;margin-top: 0;left: 50px">&nbsp°C</p><br><br>
+			
+			<p style="position: absolute;color: powderblue;margin-left: 0;margin-top: 0">MINIMUM TEMPERATURE</p><br><br>
+			<p id="temp_min_4" style="color: violet;float: left"></p>
+			<p style="position: absolute;color: white;margin-left: 0;margin-top: 0;left: 50px">&nbsp°C</p><br><br>
+			
+			<p style="position: absolute;color: powderblue;margin-left: 0;margin-top: 0">PRESSURE</p><br>
+			<p id="pressure_4" style="color: violet;float: left"></p>
+			<p style="position: absolute;color: white;margin-left: 0;margin-top: 0;left: 50px">&nbsphPa</p><br><br>
+
+			<p style="position: absolute;color: powderblue">HUMIDITY</p><br>
+			<p id="humidity_4" style="color: violet;float: left"></p>
+			<p style="position: absolute;color: white;left: 50px;">&nbsp%</p><br><br>
+
+			<p style="position: absolute;color: powderblue">WIND SPEED</p><br><br>
+			<p id="wind_speed_4" style="color: violet;float: left"></p>
+			<p style="position: absolute;color: white;left: 50px">&nbspkm/h</p><br><br>
+
+		</div>
+
+		<div class="day5">
+		
+			<h2 id="date5" style="position: absolute;color: violet;margin-left: 30px;margin-top: 0;letter-spacing: 1px"></h2><br><br>
+
+			<p id="temp_5" style="margin-left: 60px;color: white;font-size: 40px;float: left;"></p><br>
+			<p style="position: absolute;color: white;margin-left: 0;margin-top: 0;left: 110px">&nbsp°C</p><br><br>
+
+			<p id="weather_5" style="color: violet;font-size: 30px"></p><br><br>
+
+			<p style="color: powderblue;position: absolute;margin-left: 0;margin-top: 0">MAXIMUM TEMPERATURE</p><br><br>
+			<p id="temp_max_5" style="color: violet;float: left"></p>
+			<p style="position: absolute;color: white;margin-left: 0;margin-top: 0;left: 50px">&nbsp°C</p><br><br>
+			
+			<p style="position: absolute;color: powderblue;margin-left: 0;margin-top: 0">MINIMUM TEMPERATURE</p><br><br>
+			<p id="temp_min_5" style="color: violet;float: left"></p>
+			<p style="position: absolute;color: white;margin-left: 0;margin-top: 0;left: 50px">&nbsp°C</p><br><br>
+			
+			<p style="position: absolute;color: powderblue;margin-left: 0;margin-top: 0">PRESSURE</p><br>
+			<p id="pressure_5" style="color: violet;float: left"></p>
+			<p style="position: absolute;color: white;margin-left: 0;margin-top: 0;left: 50px">&nbsphPa</p><br><br>
+
+			<p style="position: absolute;color: powderblue">HUMIDITY</p><br>
+			<p id="humidity_5" style="color: violet;float: left"></p>
+			<p style="position: absolute;color: white;left: 50px;">&nbsp%</p><br><br>
+
+			<p style="position: absolute;color: powderblue">WIND SPEED</p><br><br>
+			<p id="wind_speed_5" style="color: violet;float: left"></p>
+			<p style="position: absolute;color: white;left: 50px">&nbspkm/h</p><br><br>
+
+		</div>
+
+		<button class="back_arrow" onclick="window.location.href = '#fourth_page'"><img style="height: 30px;width: 50px;" src="arrow5.png"></button>
+	</section>
+	
+	<section id="sixth_page">
+		<button class="up_arrow" onclick="window.location.href = '#fifth_page'"><img style="height: 4vh;width: 7%;" src="arrow4_up.png"></button>
+		<div class="last_wording">
+			<pre>
+				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp© SKY ZODIAC 2020
+				
+				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspAll Rights Reserved
+				
+
+				A young innovative operating from India
+
+
+
+
+
+				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspProjects
+				
+				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspTerms of service
+				
+				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspPrivacy Policy
+			</pre>
+		</div>
+	</section>
+</body>
+</html>

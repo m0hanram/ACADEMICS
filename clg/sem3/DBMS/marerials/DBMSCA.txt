@@ -1,0 +1,194 @@
+PUBLISHER :
+		mysql> CREATE TABLE PUBLISHER(PUBLISHERID VARCHAR(4) PRIMARY KEY,NAME VARCHAR(30),PLACE VARCHAR(20),CONSTRAINT P1 CHECK(PUBLISHERID LIKE 'P%'),CONSTRAINT P2 CHECK(PLACE IN ('Delhi','USA','China')));
+Query OK, 0 rows affected (0.01 sec)
+
+BOOK:
+		mysql> CREATE TABLE BOOK(ISBN NUMERIC(6) PRIMARY KEY,TITLE VARCHAR(30),YEAR NUMERIC(4),PUBLISHERID VARCHAR(4),PAGES INT,PRICE DECIMAL(8,2),LANGUAGE VARCHAR(20),CONSTRAINT B1 CHECK(ISBN LIKE '111%'),CONSTRAINT B2 CHECK(TITLE REGEXP '^[A-Z][:word]*'),CONSTRAINT B3 CHECK(YEAR>1999),CONSTRAINT B4 FOREIGN KEY (PUBLISHERID) REFERENCES PUBLISHER (PUBLISHERID),CONSTRAINT B5 CHECK(LANGUAGE IN('English','French','Hindi')));
+Query OK, 0 rows affected (0.02 sec)
+
+AUTHOR :
+		mysql> CREATE TABLE AUTHOR(AUTHORID VARCHAR(4) PRIMARY KEY,NAME VARCHAR(30),BIRTHDATE DATE,NATIONALITY VARCHAR(20),CONSTRAINT A1 CHECK(AUTHORID LIKE '^[A][:digit]*'),CONSTRAINT A2 CHECK(NAME REGEXP '^[A-Z][:word]*'));
+Query OK, 0 rows affected (0.02 sec)
+
+WRITES:
+		mysql> CREATE TABLE WRITES(ISBN NUMERIC(6),AUTHORID VARCHAR(4),FOREIGN KEY (ISBN) REFERENCES BOOK (ISBN),FOREIGN KEY (AUTHORID) REFERENCES AUTHOR (AUTHORID));
+Query OK, 0 rows affected (0.02 sec)
+
+INSERING :
+
+PUBLISHER:
+	INSERT INTO PUBLISHER VALUE('P501','Narosa','Delhi');
+Query OK, 1 row affected (0.00 sec)
+
+	INSERT INTO PUBLISHER VALUE('P203','McGraw Hill','China');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO PUBLISHER VALUE('P604','Pearson','USA');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO PUBLISHER VALUE('P502','Pleasent','Delhi');
+Query OK, 1 row affected (0.00 sec)
+
+BOOK:
+
+
+mysql> INSERT INTO BOOK VALUE(111245,'C Programming',2000,'P501',200,250.20,'English');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO BOOK VALUE(111753,'System Software',2005,'P203',350,500.00,'French');
+Query OK, 1 row affected (0.00 sec)
+
+
+mysql> INSERT INTO BOOK VALUE(111555,'Object Oriented',2001,'P501',345,400.00,'Hindi');
+Query OK, 1 row affected (0.00 sec)
+
+
+mysql> INSERT INTO BOOK VALUE(111467,'Database Management',2004,'P604',550,390.50,'English');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO BOOK VALUE(111654,'Data Structures',2004,'P203',530,600.00,'English');
+Query OK, 1 row affected (0.00 sec)
+
+AUTHOR:
+
+
+mysql> INSERT INTO AUTHOR VALUE('A101','Dennis ritchie','1965/04/12','Indian');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO AUTHOR VALUE('A102','Dhamdhere','1958/01/30','American');  Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO AUTHOR VALUE('A103','Ramez elmasri','1956/09/16','Indian');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO AUTHOR VALUE('A104','Herbert schildt','1949/06/26','American');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> INSERT INTO AUTHOR VALUE('A105','Thomas carman','1948/05/17','Indian');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO AUTHOR VALUE('A106','Ragu ramakrishnan','1961/08/20','Indian');
+Query OK, 1 row affected (0.00 sec)
+
+WRITES:
+
+
+mysql> INSERT INTO WRITES VALUE(111245,'A101');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> INSERT INTO WRITES VALUE(111753,'A102');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO WRITES VALUE(111654,'A105');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO WRITES VALUE(111467,'A103');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO WRITES VALUE(111245,'A104');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO WRITES VALUE(111467,'A106');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO WRITES VALUE(111467,'A101');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO WRITES VALUE(111245,'A102');
+Query OK, 1 row affected (0.00 sec)
+
+
+Q1]
+mysql> SELECT * FROM BOOK WHERE ISBN NOT IN (SELECT DISTINCT ISBN FROM WRITES);
++--------+-----------------+------+-------------+-------+--------+----------+
+| ISBN   | TITLE           | YEAR | PUBLISHERID | PAGES | PRICE  | LANGUAGE |
++--------+-----------------+------+-------------+-------+--------+----------+
+| 111555 | Object Oriented | 2001 | P501        |   345 | 400.00 | Hindi    |
++--------+-----------------+------+-------------+-------+--------+----------+
+1 row in set (0.00 sec)
+
+Q2]
+
+mysql> SELECT TITLE FROM BOOK WHERE LANGUAGE='English' AND PUBLISHERID='P501';
++---------------+
+| TITLE         |
++---------------+
+| C Programming |
++---------------+
+1 row in set (0.00 sec)
+
+Q3]
+
+mysql> SELECT NAME FROM AUTHOR WHERE AUTHORID IN (SELECT AUTHORID FROM WRITES GROUP BY AUTHORID HAVING COUNT(*)>1);
++----------------+
+| NAME           |
++----------------+
+| Dennis ritchie |
+| Dhamdhere      |
++----------------+
+2 rows in set (0.00 sec)
+
+Q4]
+
+mysql> SELECT TITLE FROM BOOK WHERE PUBLISHERID IN (SELECT PUBLISHERID FROM PUBLISHER WHERE PLACE='Delhi');
++-----------------+
+| TITLE           |
++-----------------+
+| C Programming   |
+| Object Oriented |
++-----------------+
+2 rows in set (0.00 sec)
+
+CREATION:
+
+
+mysql> CREATE TABLE BOOK_COUNT (AUTHORID VARCHAR(4),NO_OF_BOOKS INT);
+Query OK, 0 rows affected (0.02 sec)
+
+
+Q5]
+mysql> DELIMITER //
+mysql> CREATE PROCEDURE P1() BEGIN DECLARE I INT DEFAULT 101;
+    -> DECLARE BNO INT DEFAULT 0;
+    -> LOOP_1:LOOP
+    -> SET BNO = (SELECT COUNT(*) FROM WRITES WHERE AUTHORID=CONCAT('A',I) GROUP BY AUTHORID);
+    -> INSERT INTO BOOK_COUNT VALUE(CONCAT('A',I),BNO);
+    -> SET I = I+1;
+    -> IF I>106 THEN
+    -> LEAVE LOOP_1;
+    -> END IF;
+    -> END LOOP;
+    -> END //
+Query OK, 6 rows affected (0.02 sec)
+mysql> DELIMITER ;
+mysql> call p1;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from BOOK_COUNT;
++----------+-------------+
+| AUTHORID | NO_OF_BOOKS |
++----------+-------------+
+| A101     |           2 |
+| A102     |           2 |
+| A103     |           1 |
+| A104     |           1 |
+| A105     |           1 |
+| A106     |           1 |
++----------+-------------+
+6 rows in set (0.00 sec)
+
+
+
+Q6]
+
+mysql> DELIMITER //
+mysql> CREATE TRIGGER T1
+    -> AFTER INSERT
+    -> ON WRITES FOR EACH ROW
+    -> BEGIN
+    -> UPDATE BOOK_COUNT SET NO_OF_BOOKS=NO_OF_BOOKS+1 WHERE AUTHORID=NEW.AUTHORID;
+    -> END //
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> DELIMITER ;
+
+

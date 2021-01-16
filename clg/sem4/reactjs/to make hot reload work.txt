@@ -1,0 +1,5 @@
+// add this line of code at the bottom of index.js
+
+if (module.hot) {
+    module.hot.accept();
+  }

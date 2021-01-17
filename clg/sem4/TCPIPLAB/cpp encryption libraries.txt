@@ -1,0 +1,4 @@
+libgcrypt
+Crypto++ 
+LibTomCrypt
+OpenSSL

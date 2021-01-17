@@ -1,0 +1,30 @@
+from encryption import encrypting, aes_encryption
+from decryption import decrypting, aes_decryption
+if __name__ == '__main__':
+    choice = int(input("enter 1 for simple and 2 for AES256 : "))
+    if choice == 1:
+        key = int(input("enter the key for Caesar encryption : "))
+        of = open("txtfile.txt", "r")
+        print("The message to be encrypted : ")
+        print(of.read())
+        encrypting("txtfile.txt", "encrypted_file.txt", key)
+        print("The message after encryption : ")
+        ef = open("encrypted_file.txt", "r")
+        print(ef.read())
+        decrypting("encrypted_file.txt", "decrypted_file.txt", key)
+        print("The message after decryption is : ")
+        df = open("decrypted_file.txt", "r")
+        print(df.read())
+    if choice == 2:
+        password = input("enter the password for AES encryption : ")
+        of = open("txtfile.txt", "r")
+        print("The message to be encrypted : ")
+        print(of.read())
+        aes_encryption("txtfile.txt", "encrypted_file.txt", password)
+        print("The message after encryption : ")
+        ef = open("encrypted_file.txt", "r")
+        print(ef.read())
+        aes_decryption("encrypted_file.txt", "decrypted_file.txt", password)
+        print("The message after decryption is : ")
+        df = open("decrypted_file.txt", "r")
+        print(df.read())

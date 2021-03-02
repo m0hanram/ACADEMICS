@@ -140,4 +140,6 @@ STATIC_URL = '/static/'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
-
+LOGIN_REDIRECT_URL = 'index'                                           # if redirected comes to index page itself
+ACCOUNT_EMAIL_REQUIRED = True
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'       # to send the emails entered to console to check the functioning

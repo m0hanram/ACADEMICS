@@ -1,0 +1,291 @@
+1]
+	Display the absolute path of your home directory.
+	Create a new subdirectory called OS in your home directory.
+	Create a new subdirectory called assign1 in OS.
+	Create a new subdirectory called assign2 in OS.
+	Display the contents of the directory OS.
+	Delete the directory assign2.
+	Display the contents of the directory OS.
+		
+		mohanram@LAPTOP-HTV57VOH:~$ pwd
+		/home/mohanram
+		
+		mohanram@LAPTOP-HTV57VOH:~$ mkdir OS
+		
+		mohanram@LAPTOP-HTV57VOH:~$ cd OS
+		
+		mohanram@LAPTOP-HTV57VOH:~/OS$ mkdir assign1
+		
+		mohanram@LAPTOP-HTV57VOH:~/OS$ mkdir assign2
+		
+		mohanram@LAPTOP-HTV57VOH:~/OS$ ls
+		assign1  assign2
+		
+		mohanram@LAPTOP-HTV57VOH:~/OS$ rmdir assign2
+		
+		mohanram@LAPTOP-HTV57VOH:~/OS$ ls
+		assign1
+
+2]
+	Change your current working directory to OS.
+	Create a new subdirectory called assign2 in OS.
+	Create a new file called MyFile.txt using the touch command and insert two lines into the file.
+	The first line should be a sentence that tells me your favorite movie.
+	The second line should be a sentence that tells me your favorite food.
+	Display the contents of the file MyFile.txt to the standard output (screen).
+	Copy the file MyFile.txt to directory assign1 and rename it to t_1.txt.
+	Change your working directory to assign1.
+	Make a copy of t_1.txt with the name t_2.txt (in the same directory).
+	Display the contents of the directory assign1.
+	Copy the t_1.txt file to directory assign2.
+	Display the contents of the directory assign2.
+	Delete the file t_1.txt in the directory assign1.
+	Display the contents of the directory assign1		
+
+		mohanram@LAPTOP-HTV57VOH:~$ cd OS
+		
+		mohanram@LAPTOP-HTV57VOH:~/OS$ mkdir assign2
+		
+		mohanram@LAPTOP-HTV57VOH:~/OS$ touch MyFile.txt
+		mohanram@LAPTOP-HTV57VOH:~/OS$ echo "My favorite movie is Shutter Island" >> MyFile.txt
+		mohanram@LAPTOP-HTV57VOH:~/OS$ echo "My favorite food is Biriyani" >> MyFile.txt
+		
+		mohanram@LAPTOP-HTV57VOH:~/OS$ cat MyFile.txt
+		My favorite movie is Shutter Island
+		My favorite food is Biriyani
+		
+		mohanram@LAPTOP-HTV57VOH:~/OS$ cp MyFile.txt t_1.txt
+		mohanram@LAPTOP-HTV57VOH:~/OS$ ls
+		MyFile.txt  assign1  assign2  t_1.txt
+		mohanram@LAPTOP-HTV57VOH:~/OS$ mv t_1.txt assign1
+		mohanram@LAPTOP-HTV57VOH:~/OS$ ls
+		MyFile.txt  assign1  assign2
+		mohanram@LAPTOP-HTV57VOH:~/OS$ cd assign1
+		mohanram@LAPTOP-HTV57VOH:~/OS/assign1$ ls
+		t_1.txt
+
+		mohanram@LAPTOP-HTV57VOH:~/OS/assign1$ cp t_1.txt t_2.txt
+		mohanram@LAPTOP-HTV57VOH:~/OS/assign1$ ls
+		t_1.txt  t_2.txt
+		
+		mohanram@LAPTOP-HTV57VOH:~/OS/assign1$ cp /home/mohanram/OS/assign1/t_1.txt /home/mohanram/OS/assign2
+		mohanram@LAPTOP-HTV57VOH:~/OS/assign1$ cd ..
+		mohanram@LAPTOP-HTV57VOH:~/OS$ cd assign2
+		mohanram@LAPTOP-HTV57VOH:~/OS/assign2$ ls
+		t_1.txt
+		
+		mohanram@LAPTOP-HTV57VOH:~/OS/assign2$ cd ..
+		mohanram@LAPTOP-HTV57VOH:~/OS$ cd assign1
+		mohanram@LAPTOP-HTV57VOH:~/OS/assign1$ rm t_1.txt
+		mohanram@LAPTOP-HTV57VOH:~/OS/assign1$ ls
+		t_2.txt
+		mohanram@LAPTOP-HTV57VOH:~/OS/assign1$
+
+3]Manipulate files using wildcards.
+Change your current working directory to OS. (Stay in this directory for the rest of the steps )
+Create a new directory called assign3 in your working directory.
+Create 9 new files (in directory OS) named as follows:
+Test_1.txt
+Test_2.txt
+Test_1-1.txt
+Test_2-1.txt
+Test_1-2.xtxt
+Test_2-2.xtxt
+Test_1-1.bak
+Test_2-2.bak
+File_1.bat
+Display a listing of all the files in the working directory.
+Display a listing of all the files ending in txt using one command.
+Display a listing of all the files ending in t using one command.
+Copy all the files containing "t_1" to the directory assign3 using one command.
+Display a listing of the contents of the directory assign3.
+Use the "ls" command and list all files that contains "Test_2" in the filename.
+Copy the content of all files that contain "Test_1" in their filename, into a file called "tot.txt".
+Write a single command that shows how many files you have in your current working directory.
+Make a list of your files into a file.
+Assume that you are NOT currently in your home directory.  Enter a command to copy all files in your home directory beginning with the
+letter 'a' to the current directory.
+Issue a command to delete all files in your current directory with 2-character names.
+Issue a command to delete one of the directory (in your home directory) and all of its children. Use an absolute pathname 
+Enter a command to make the root directory your current directory.
+
+		mohanram@LAPTOP-HTV57VOH:~$ cd OS
+		mohanram@LAPTOP-HTV57VOH:~/OS$ mkdir assign3
+		mohanram@LAPTOP-HTV57VOH:~/OS$ touch Test_1.txt Test_2.txt Test_1-1.txt Test_2-1.txt Test_1-2.xtxt Test_2-2.xtxt Test_1-1.bak Test_2-2.bak File_1.bat
+		mohanram@LAPTOP-HTV57VOH:~/OS$ ls
+		File_1.bat    Test_1-1.txt   Test_2-1.txt   Test_2.txt  assign3
+		MyFile.txt    Test_1-2.xtxt  Test_2-2.bak   assign1
+		Test_1-1.bak  Test_1.txt     Test_2-2.xtxt  assign2
+		mohanram@LAPTOP-HTV57VOH:~/OS$ ls *.txt
+		MyFile.txt  Test_1-1.txt  Test_1.txt  Test_2-1.txt  Test_2.txt
+		mohanram@LAPTOP-HTV57VOH:~/OS$ ls *t
+		File_1.bat  Test_1-1.txt   Test_1.txt    Test_2-2.xtxt
+		MyFile.txt  Test_1-2.xtxt  Test_2-1.txt  Test_2.txt
+		mohanram@LAPTOP-HTV57VOH:~/OS$ cp /home/mohanram/OS/*t_1* /home/mohanram/OS/assign3
+		mohanram@LAPTOP-HTV57VOH:~/OS$ cd assign3
+		mohanram@LAPTOP-HTV57VOH:~/OS/assign3$ ls
+		Test_1-1.bak  Test_1-1.txt  Test_1-2.xtxt  Test_1.txt
+		mohanram@LAPTOP-HTV57VOH:~/OS/assign3$ cd ..
+		mohanram@LAPTOP-HTV57VOH:~/OS$ ls Test_2*
+		Test_2-1.txt  Test_2-2.bak  Test_2-2.xtxt  Test_2.txt
+		mohanram@LAPTOP-HTV57VOH:~/OS$ cat Test_1* > tot.txt
+		mohanram@LAPTOP-HTV57VOH:~/OS$ ls -l | wc -l
+		15
+		mohanram@LAPTOP-HTV57VOH:~/OS$ ls > list_of_files.txt
+		mohanram@LAPTOP-HTV57VOH:~/OS$ cp -r /home/mohanram/OS/a* .
+		mohanram@LAPTOP-HTV57VOH:~/OS$ find -type f -name "??.*" -delete
+		mohanram@LAPTOP-HTV57VOH:~$ rm -rf ./OS/assign2
+		mohanram@LAPTOP-HTV57VOH:~/OS$ cd /
+
+
+4]Print the disk usage of directory OS in bytes.
+	mohanram@LAPTOP-HTV57VOH:~$ du -b OS
+	4161    OS/assign1
+	4096    OS/assign3
+	12643   OS
+
+Print the disk usage of the directory and all its files.
+	mohanram@LAPTOP-HTV57VOH:~$ du -a OS
+	0       OS/assign1/t_2.txt
+	0       OS/assign1
+	0       OS/assign3/Test_1-1.bak
+	0       OS/assign3/Test_1-1.txt
+	0       OS/assign3/Test_1-2.xtxt
+	0       OS/assign3/Test_1.txt
+	0       OS/assign3
+	0       OS/File_1.bat
+	0       OS/list_of_files.txt
+	0       OS/MyFile.txt
+	0       OS/Test_1-1.bak
+	0       OS/Test_1-1.txt
+	0       OS/Test_1-2.xtxt
+	0       OS/Test_1.txt
+	0       OS/Test_2-1.txt
+	0       OS/Test_2-2.bak
+	0       OS/Test_2-2.xtxt
+	0       OS/Test_2.txt
+	0       OS/tot.txt
+	0       OS
+Print the newline count, the byte count and the longest line length for the file MyFile.txt in the directory OS.
+	mohanram@LAPTOP-HTV57VOH:~$ wc -l -c -L OS/MyFile.txt
+	2 65 35 OS/MyFile.txt	
+
+Print the current date using the default format.
+	mohanram@LAPTOP-HTV57VOH:~$ date
+	Sun Jan 17 17:43:03 IST 2021
+
+Print the current date in the format mm/dd/yy (example: 09/04/09).
+	mohanram@LAPTOP-HTV57VOH:~$ date "+%m/%d/%y"
+	01/17/21	
+
+What is the option to "ls" to list all files?
+Try it in your home directory.
+		-a
+	mohanram@LAPTOP-HTV57VOH:~$ ls -a
+	.   .bash_history  .bashrc     .motd_shown  OS
+	..  .bash_logout   .landscape  .profile
+
+Which files do you see now that you don't see with "ls" alone?
+	hidden files also is displayed
+
+What is the option to "ls" to list all files in all subdirectories. Try it.
+		-R
+	mohanram@LAPTOP-HTV57VOH:~$ ls -R
+	.:
+	OS
+
+	./OS:
+	File_1.bat    Test_1-1.txt   Test_2-1.txt   Test_2.txt  list_of_files.txt
+	MyFile.txt    Test_1-2.xtxt  Test_2-2.bak   assign1     tot.txt
+	Test_1-1.bak  Test_1.txt     Test_2-2.xtxt  assign3
+
+	./OS/assign1:
+	t_2.txt
+
+	./OS/assign3:
+	Test_1-1.bak  Test_1-1.txt  Test_1-2.xtxt  Test_1.txt	
+
+What is the command to count lines, words and characters in a file?
+		wc
+	mohanram@LAPTOP-HTV57VOH:~$ wc OS/MyFile.txt
+	2 11 65 OS/MyFile.txt
+	
+How do you make this command display only the number of lines?
+		wc -l	
+	mohanram@LAPTOP-HTV57VOH:~$ wc -l OS/MyFile.txt
+	2 OS/MyFile.txt
+
+Display the file "tot.txt" on the screen using "cat" command.
+	mohanram@LAPTOP-HTV57VOH:~/OS$ cat tot.txt
+	Test_1-1.bak
+	Test_1-1.txt
+	Test_1-2.xtxt
+	Test_1.txt	
+
+Display the file "tot.txt" on the screen using more.
+Test to walk upwards and downwards in the file using the "more" program.
+	mohanram@LAPTOP-HTV57VOH:~/OS$ more tot.txt
+	Test_1-1.bak
+	Test_1-1.txt
+	Test_1-2.xtxt
+	Test_1.txt	
+	
+
+Search for the word "Length" using the "more" and the "less" program, compare the results.
+	mohanram@LAPTOP-HTV57VOH:~/OS$ more tot.txt /length
+	::::::::::::::
+	tot.txt
+	::::::::::::::
+	Test_1-1.bak
+	Test_1-1.txt
+	Test_1-2.xtxt
+	Test_1.txt
+	more: stat of /length failed: No such file or directory
+	mohanram@LAPTOP-HTV57VOH:~/OS$ less tot.txt /length
+
+Display the first 5 lines of the file "verylong.seq" on the screen.
+	mohanram@LAPTOP-HTV57VOH:~/OS$ sed -n "1,5p" verylong.seq
+
+Do a case insensitive search for the string "length" in all files.
+	mohanram@LAPTOP-HTV57VOH:~/OS$ grep -i length *
+	
+Compare the files "1.txt", "2.txt" and "3.txt". Which one is different from the others?
+	mohanram@LAPTOP-HTV57VOH:~/OS$ diff3 /home/mohanram/OS/1.txt /home/mohanram/OS/2.txt /home/mohanram/OS/3.txt
+
+Put the first 7 and last 7 lines of the file "verylong.seq" into a file called "first-and-last". 
+	mohanram@LAPTOP-HTV57VOH:~/OS$ sed -n "1,7p" verylong.seq > first-and-last.txt
+	mohanram@LAPTOP-HTV57VOH:~/OS$ tail -n 7 verylong.seq >> first-and-last.txt
+
+List the names of all files in your whole account that end with "seq" in their filename.
+	mohanram@LAPTOP-HTV57VOH:~/OS$ ls *seq *
+
+List all files created or changed during the last 24 hours.
+	mohanram@LAPTOP-HTV57VOH:~/OS$ find . -mtime -1
+
+Find out who is logged on using "w", "who" and "finger".
+	mohanram@LAPTOP-HTV57VOH:~/OS$ w
+	18:49:57 up  1:47,  0 users,  load average: 0.52, 0.58, 0.59
+	USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+	mohanram@LAPTOP-HTV57VOH:~/OS$ w	
+	mohanram@LAPTOP-HTV57VOH:~/OS$ finger mohanram	
+
+Find out which processes that are running using "top".
+	mohanram@LAPTOP-HTV57VOH:~/OS$ top
+	top - 18:55:17 up  1:52,  0 users,  load average: 0.52, 0.58, 0.59
+	Tasks:   5 total,   1 running,   3 sleeping,   1 stopped,   0 zombie
+	%Cpu(s):  1.3 us,  1.0 sy,  0.0 ni, 97.6 id,  0.0 wa,  0.1 hi,  0.0 si,  0.0
+	MiB Mem :   8001.2 total,   4775.7 free,   3001.5 used,    224.0 buff/cache
+	MiB Swap:  24576.0 total,  24173.7 free,    402.3 used.   4869.1 avail Mem
+
+ 	 PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+  	  1 root      20   0    8936    316    272 S   0.0   0.0   0:00.25 init
+   	  6 root      20   0    8936    224    176 S   0.0   0.0   0:00.00 init
+ 	  7 mohanram  20   0   18100   3648   3552 S   0.0   0.0   0:00.45 bash
+  	 44 mohanram  20   0   17016   2708   1760 T   0.0   0.0   0:00.01 nano
+ 	 112 mohanram  20   0   18928   2152   1516 R   0.0   0.0   0:00.04 top
+                                                                               
+
+Get more information about one account using "finger accountname" where accountname is the name of the account. 
+		
+
+		

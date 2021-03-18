@@ -1,6 +1,6 @@
 import django
 from django.db.models.fields import files
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.views import View
 from .models import Comment, Post, UserProfile
 from .forms import PostForm, CommentForm
@@ -116,10 +116,26 @@ class ProfileView(View):
         user = profile.user
         posts = Post.objects.filter(author = user).order_by('-created_on')
 
+        followers = profile.followers.all()
+
+        if len(followers) == 0:
+            is_following = False
+
+        for follower in followers:
+            if follower == request.user:
+                is_following = True
+                break
+            else:
+                is_following = False
+                
+        number_of_followers = len(followers)
+    
         context = {
             'user': user,
             'profile': profile,
-            'posts': posts
+            'posts': posts,
+            'number_of_followers': number_of_followers,
+            'is_following': is_following
         }
 
         return render(request, 'social/profile.html', context)
@@ -138,3 +154,18 @@ class ProfileEditView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
         profile = self.get_object()
         return self.request.user == profile.user
          
+
+class AddFollower(LoginRequiredMixin, View):
+    def post(self, request, pk, *args, **kwargs):
+        profile = UserProfile.objects.get(pk = pk)
+        profile.followers.add(request.user)
+
+        return redirect('profile', pk=profile.pk)
+
+
+class RemoveFollower(LoginRequiredMixin, View):
+    def post(self, request, pk, *args, **kwargs):
+        profile = UserProfile.objects.get(pk = pk)
+        profile.followers.remove(request.user)
+
+        return redirect('profile', pk=profile.pk)

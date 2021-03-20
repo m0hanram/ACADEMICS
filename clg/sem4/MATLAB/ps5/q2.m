@@ -1,0 +1,1 @@
+%2syms x;syms y;f = cos(2*x) - x^2*exp(5*y) + 3*y^2;a = diff(f,x)b = diff(f,y)c = diff(f,x,2)d = diff(b,y)e = diff(b,x)g = diff(a,y)h = diff(f,y,4)i = diff(g,x)
